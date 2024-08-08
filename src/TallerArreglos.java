@@ -36,23 +36,50 @@ public class TallerArreglos {
 
     // Método para encontrar el número mayor
     public static int encontrarMayor(int[] arr) {
-        // Implementa este método
-        return 0;
+        int mayor = arr[0];
+        for (int num : arr) {
+            if (num > mayor) {
+                mayor = num;
+            }
+        }
+        return mayor;
     }
 
     // Método para calcular el promedio
     public static double calcularPromedio(int[] arr) {
-        // Implementa este método
-        return 0.0;
+        int suma = 0;
+        for (int num : arr) {
+            suma += num;
+        }
+        return (double) suma / arr.length;
     }
 
     // Método para invertir el arreglo
     public static void invertirArreglo(int[] arr) {
-        // Implementa este método
+        int i = 0, j = arr.length - 1;
+        while (i < j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
     }
 
     // Método para ordenar el arreglo (puedes usar el algoritmo de burbuja)
     public static void ordenarArreglo(int[] arr) {
-        // Implementa este método
+        boolean swapped;
+        for (int i = 0; i < arr.length - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) break;
+        }
     }
 }
